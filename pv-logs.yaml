@@ -1,0 +1,29 @@
+kind: PersistentVolume 
+apiVersion: v1 
+metadata: 
+  name: logs-pv
+  labels: 
+    type: local 
+    app: airflow-logs
+spec: 
+  storageClassName: fast 
+  capacity: 
+    storage: 2Gi 
+  accessModes: 
+    - ReadWriteMany 
+  hostPath: 
+    path: "/opt/logs" 
+--- 
+kind: PersistentVolumeClaim 
+apiVersion: v1 
+metadata: 
+  name: logs-pvc
+  labels: 
+    app: airflow-logs
+spec: 
+  storageClassName: fast 
+  accessModes: 
+    - ReadWriteMany 
+  resources: 
+    requests: 
+      storage: 2Gi 

@@ -1,0 +1,29 @@
+kind: PersistentVolume 
+apiVersion: v1 
+metadata: 
+  name: dags-pv
+  labels: 
+    type: local 
+    app: airflow-dags
+spec: 
+  storageClassName: fast 
+  capacity: 
+    storage: 2Gi 
+  accessModes: 
+    - ReadWriteMany 
+  hostPath: 
+    path: "/opt/dags" 
+--- 
+kind: PersistentVolumeClaim 
+apiVersion: v1 
+metadata: 
+  name: dags-pvc
+  labels: 
+    app: airflow-dags 
+spec: 
+  storageClassName: fast 
+  accessModes: 
+    - ReadWriteMany 
+  resources: 
+    requests: 
+      storage: 2Gi 

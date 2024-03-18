@@ -1,0 +1,10 @@
+apiVersion: v1 
+kind: ConfigMap 
+metadata: 
+  name: postgres-config 
+  labels: 
+    app: postgres 
+data: 
+  POSTGRES_DB: airflow_db 
+  POSTGRES_USER: airflow_user
+  POSTGRES_PASSWORD: airflow_pass
