@@ -57,7 +57,7 @@
 28. pip install 'apache-airflow[cncf.kubernetes]'  --break-system-packages
 29. pip install apache-airflow-providers-cncf-kubernetes --break-system-packages
 30. On terminal
-    airflow users create --username admin --password admin --firstname --lastname --role Admin --email kulkarni.bhushan85@gmail.com
+    airflow users create --username admin --password admin --firstname abc --lastname xyz --role Admin --email abc.xyz@gmail.com
 31. Add below sql connection for postgress in airflow.cfg inside pod
     postgresql+psycopg2://airflow_user:airflow_pass123@postgres:5432/airflow_db
 
